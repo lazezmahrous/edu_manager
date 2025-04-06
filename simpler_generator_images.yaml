@@ -16,8 +16,8 @@ groups:
     # checkUnusedVariables: false
     # checkUnusedAssets: false
 
-  - path: assets/svg
-    class_name: AppSvg
+  - path: assets/svgs
+    class_name: AppSvgs
     types: [ .svg ]
     outputPath: lib/core/constans
     warnings: true

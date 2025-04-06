@@ -5,9 +5,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 
-class AppImages {
-  AppImages._();
+class AppSvgs {
+  AppSvgs._();
   
-	//Check -> 
-	//types: [.png, .jpg, .jpeg, .webp, .webm, .bmp, .svg, .gif, .riv, .json]
+  static const String center = 'assets/svgs/center.svg';  
+  static const String teacher = 'assets/svgs/teacher.svg';  
+  static const String userGraduate = 'assets/svgs/user-graduate.svg';  
 }
