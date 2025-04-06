@@ -17,6 +17,6 @@ class TeacherResponseModel {
     required this.centers,
   });
 
-  static TeacherResponseModel fromJson(Map<dynamic, dynamic> json) =>
-      $_TeacherResponseModel(json);
+  static TeacherResponseModel fromJson(Map<String, dynamic> json) =>
+      _$TeacherResponseModelFromJson(json);
 }

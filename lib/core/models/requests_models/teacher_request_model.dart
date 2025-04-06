@@ -21,6 +21,5 @@ class TeacherRequestModel {
     required this.centers,
   });
 
-  static TeacherRequestModel fromJson(Map<dynamic, dynamic> json) =>
-      $_TeacherRequestModel(json);
+  Map<String , dynamic> toJson() => _$TeacherRequestModelToJson(this);
 }

@@ -17,7 +17,7 @@ class StudentResponseModel {
     required this.address,
     required this.teachersSelected,
   });
-  static StudentResponseModel fromJson(Map<dynamic, dynamic> json) =>
-      $_StudentResponseModel(json);
+  static StudentResponseModel fromJson(Map<String, dynamic> json) =>
+      _$StudentResponseModelFromJson(json);
 
 }

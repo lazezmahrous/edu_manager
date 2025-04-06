@@ -1,4 +1,3 @@
-
 import 'package:json_annotation/json_annotation.dart';
 
 part 'center_request_model.g.dart';
@@ -20,6 +19,5 @@ class CenterRequestModel {
     required this.educationalStages,
   });
 
-  static CenterRequestModel fromJson(Map<dynamic, dynamic> json) =>
-      $_CentersRequestModel(json);
+  Map<String, dynamic> toJson() => _$CenterRequestModelToJson(this);
 }

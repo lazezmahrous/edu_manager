@@ -22,7 +22,6 @@ class StudentRequestModel {
     required this.teachersSelected,
     required this.followingCenters,
   });
-  static StudentRequestModel fromJson(Map<dynamic, dynamic> json) =>
-      $_StudentRequestModel(json);
 
+  Map<String, dynamic> toJson() => _$StudentRequestModelToJson(this);
 }
