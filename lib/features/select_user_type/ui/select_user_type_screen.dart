@@ -1,5 +1,6 @@
 import 'package:edu_manager/core/constans/app_svgs.dart';
 import 'package:edu_manager/core/helpers/spacing.dart';
+import 'package:edu_manager/features/select_user_type/data/models/user_type.dart';
 import 'package:edu_manager/features/select_user_type/ui/widgets/user_type_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,7 +18,6 @@ class SelectUserTypeScreen extends StatefulWidget {
 }
 
 class _SelectUserTypeScreenState extends State<SelectUserTypeScreen> {
-
   final List<Map<String, dynamic>> usersType = [
     {
       "type": Teacher(),
@@ -39,7 +39,9 @@ class _SelectUserTypeScreenState extends State<SelectUserTypeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+      ),
       body: Center(
         child: Center(
           child: ListView(
@@ -59,7 +61,7 @@ class _SelectUserTypeScreenState extends State<SelectUserTypeScreen> {
                   return UserTypeWidget(
                     icon: user["icon"]!,
                     type: user["title"]!,
-                    userType: user['type'],
+                    userType: user['type'] as UserType,
                   );
                 },
               ),
