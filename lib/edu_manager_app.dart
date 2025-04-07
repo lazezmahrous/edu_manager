@@ -1,15 +1,19 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:edu_manager/core/helpers/shared_pref_constans.dart';
+import 'package:edu_manager/features/connectivity/logic/connectivity/connectivity_cubit.dart';
 import 'package:edu_manager/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'core/routing/app_router.dart';
 import 'core/routing/routers.dart';
 import 'core/theming/app_theming_manager.dart';
+import 'features/connectivity/ui/widgets/connectivity_widget.dart';
 
 class EduManagerApp extends StatefulWidget {
-  const EduManagerApp({super.key ,required this.appRouter });
+  const EduManagerApp({super.key, required this.appRouter});
   static final GlobalKey<NavigatorState> navigatorKey =
       GlobalKey<NavigatorState>();
   final AppRouter appRouter;
@@ -21,7 +25,14 @@ class EduManagerApp extends StatefulWidget {
 class _EduManagerAppState extends State<EduManagerApp> {
   @override
   Widget build(BuildContext context) {
-    return buildMaterialApp(context, Locale('en', 'EN'));
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => ConnectivityCubit(Connectivity()),
+        ),
+      ],
+      child: buildMaterialApp(context, const Locale('ar', 'Ar')),
+    );
   }
 
   Widget buildMaterialApp(BuildContext context, Locale locale) {
@@ -33,7 +44,7 @@ class _EduManagerAppState extends State<EduManagerApp> {
           theme: AppThemingManager.ligthTheme,
           locale: locale,
           localizationsDelegates: const [
-            // S.delegate,
+            S.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
@@ -41,13 +52,13 @@ class _EduManagerAppState extends State<EduManagerApp> {
           supportedLocales: S.delegate.supportedLocales,
           debugShowCheckedModeBanner: false,
           initialRoute:
-              isLoggedInUser ? Routes.bottomNavBar : Routes.onBoardingScreen,
+              !isLoggedInUser ? Routes.selectUserTypeScreen : Routes.homeScreen,
           onGenerateRoute: widget.appRouter.generateRoute,
           builder: (context, child) {
             return Stack(
               children: [
                 child!,
-                // const ConnectivityBanner(),
+                const ConnectivityBanner(),
               ],
             );
           },

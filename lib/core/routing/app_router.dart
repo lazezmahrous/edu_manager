@@ -1,4 +1,5 @@
 import 'package:edu_manager/core/routing/routers.dart';
+import 'package:edu_manager/features/select_user_type/ui/select_user_type_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 class AppRouter {
@@ -32,9 +33,9 @@ class AppRouter {
       //       child: const LoginScreen(),
       //     ),
       //   );
-      case Routes.homeScreen:
+      case Routes.selectUserTypeScreen:
         return MaterialPageRoute(
-          builder: (_) => const HomeScreen(),
+          builder: (_) => const SelectUserTypeScreen(),
         );
       // case Routes.bottomNavBar:
       //   return MaterialPageRoute(builder: (context) => BottomNavBar(),);

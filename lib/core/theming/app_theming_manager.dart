@@ -6,14 +6,14 @@ class AppThemingManager {
 
   // Dark Theme 
   static ThemeData darkTheme = ThemeData(
-    fontFamily: 'Alexandria',
+    fontFamily: 'PlexSansArabic',
     brightness: Brightness.dark,
     colorScheme: const ColorScheme.dark(),
     appBarTheme: _appBarTheme,
   );
   // Light Theme
   static ThemeData ligthTheme = ThemeData(
-    fontFamily: 'Alexandria',
+    fontFamily: 'PlexSansArabic',
     brightness: Brightness.light,
     colorScheme: ColorScheme.light(
       primary: ColorsManager.mainOrange,
