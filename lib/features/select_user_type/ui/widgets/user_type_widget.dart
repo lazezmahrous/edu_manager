@@ -1,5 +1,5 @@
 import 'package:edu_manager/core/theming/colors.dart';
-import 'package:edu_manager/features/select_user_type/models/user_type.dart';
+import 'package:edu_manager/features/select_user_type/data/models/user_type.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -21,7 +21,7 @@ class UserTypeWidget extends StatelessWidget {
       onTap: () {
         UserType user = userType;
         user.getUserType();
-        
+
       },
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),

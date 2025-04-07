@@ -1,11 +1,12 @@
 import 'package:edu_manager/core/constans/app_svgs.dart';
 import 'package:edu_manager/core/helpers/spacing.dart';
-import 'package:edu_manager/core/theming/font_weight_helper.dart';
 import 'package:edu_manager/features/select_user_type/ui/widgets/user_type_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../models/user_type.dart';
+import '../data/models/acdemy.dart';
+import '../data/models/student.dart';
+import '../data/models/teacher.dart';
 import 'widgets/welcome_user_widget.dart';
 
 class SelectUserTypeScreen extends StatefulWidget {
@@ -16,6 +17,7 @@ class SelectUserTypeScreen extends StatefulWidget {
 }
 
 class _SelectUserTypeScreenState extends State<SelectUserTypeScreen> {
+
   final List<Map<String, dynamic>> usersType = [
     {
       "type": Teacher(),
