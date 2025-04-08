@@ -22,6 +22,66 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "noConnection": MessageLookupByLibrary.simpleMessage("No Connection")
+        "address": MessageLookupByLibrary.simpleMessage("Address"),
+        "arLanguage": MessageLookupByLibrary.simpleMessage("Arabic"),
+        "changeLanguage":
+            MessageLookupByLibrary.simpleMessage("Change Language"),
+        "confirmPsswoard":
+            MessageLookupByLibrary.simpleMessage("Confirm Password"),
+        "darkTheme": MessageLookupByLibrary.simpleMessage("Dark"),
+        "emailAlreadyInUse":
+            MessageLookupByLibrary.simpleMessage("Email already in use"),
+        "enLanguage": MessageLookupByLibrary.simpleMessage("English"),
+        "erordata":
+            MessageLookupByLibrary.simpleMessage("You can\'t leave this empty"),
+        "fieldIsRequired":
+            MessageLookupByLibrary.simpleMessage("Field Is Required"),
+        "getLocationError": MessageLookupByLibrary.simpleMessage(
+            "There was a problem detecting your address automatically, you can enter it manually"),
+        "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "lightTheme": MessageLookupByLibrary.simpleMessage("Light"),
+        "loadingSighnUser":
+            MessageLookupByLibrary.simpleMessage("Creating account..."),
+        "loginEmail": MessageLookupByLibrary.simpleMessage("Email"),
+        "loginEmailError":
+            MessageLookupByLibrary.simpleMessage("Enter a valid email"),
+        "loginEmailIsUsedWithAnotherUser":
+            MessageLookupByLibrary.simpleMessage("Email is already in use"),
+        "loginHeadText": MessageLookupByLibrary.simpleMessage("Sign In"),
+        "loginPasswoardError":
+            MessageLookupByLibrary.simpleMessage("Incorrect password"),
+        "noConnection": MessageLookupByLibrary.simpleMessage("No Connection"),
+        "passwoard": MessageLookupByLibrary.simpleMessage("Password"),
+        "passwoardNotMatch":
+            MessageLookupByLibrary.simpleMessage("Passwords do not match"),
+        "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "phoneNumberIsEmpty":
+            MessageLookupByLibrary.simpleMessage("Enter your phone number"),
+        "setting": MessageLookupByLibrary.simpleMessage("Settings"),
+        "sighnUpHeadText":
+            MessageLookupByLibrary.simpleMessage("Create Account"),
+        "sighnUpUserName": MessageLookupByLibrary.simpleMessage("Username"),
+        "termsAndConditionsTextFour":
+            MessageLookupByLibrary.simpleMessage("Privacy Policy"),
+        "termsAndConditionsTextOne": MessageLookupByLibrary.simpleMessage(
+            "By registering, you agree to our"),
+        "termsAndConditionsTextThree":
+            MessageLookupByLibrary.simpleMessage("and"),
+        "termsAndConditionsTextTow":
+            MessageLookupByLibrary.simpleMessage("Terms and Conditions"),
+        "theme": MessageLookupByLibrary.simpleMessage("Theme"),
+        "userNotFound":
+            MessageLookupByLibrary.simpleMessage("User not registered before"),
+        "userNotLogin":
+            MessageLookupByLibrary.simpleMessage("Not registered yet?"),
+        "userisLogin":
+            MessageLookupByLibrary.simpleMessage("Already have an account?"),
+        "validPhoneNumber":
+            MessageLookupByLibrary.simpleMessage("Enter a valid phone number"),
+        "weakPassword": MessageLookupByLibrary.simpleMessage("Weak password"),
+        "welcomePageButton": MessageLookupByLibrary.simpleMessage("Login"),
+        "wrongPassword": MessageLookupByLibrary.simpleMessage("Wrong password"),
+        "wrongUserName":
+            MessageLookupByLibrary.simpleMessage("Name is too short")
       };
 }

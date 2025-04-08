@@ -1,3 +1,6 @@
+import 'package:edu_manager/core/global%20widgets/app_back_button.dart';
+import 'package:edu_manager/core/helpers/extensions.dart';
+import 'package:edu_manager/core/routing/routers.dart';
 import 'package:edu_manager/core/theming/colors.dart';
 import 'package:edu_manager/features/select_user_type/data/models/user_type.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +24,7 @@ class UserTypeWidget extends StatelessWidget {
       onTap: () {
         UserType user = userType;
         user.getUserType();
-
+        context.pushNamed(Routes.signupScreen, arguments: user);
       },
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
