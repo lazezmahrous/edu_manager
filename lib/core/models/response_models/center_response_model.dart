@@ -15,6 +15,6 @@ class CenterResponseModel {
     required this.educationalStages,
   });
 
-  static CenterResponseModel fromtoJson(Map<String, dynamic> json) =>
+  static CenterResponseModel fromJson(Map<String, dynamic> json) =>
       _$CenterResponseModelFromJson(json);
 }

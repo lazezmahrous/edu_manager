@@ -4,7 +4,7 @@ import 'colors.dart';
 class AppThemingManager {
   AppThemingManager._();
 
-  // Dark Theme 
+  // Dark Theme
   static ThemeData darkTheme = ThemeData(
     fontFamily: 'PlexSansArabic',
     brightness: Brightness.dark,
@@ -16,7 +16,7 @@ class AppThemingManager {
     fontFamily: 'PlexSansArabic',
     brightness: Brightness.light,
     colorScheme: ColorScheme.light(
-      primary: ColorsManager.mainOrange,
+      primary: ColorsManager.mainBlue,
     ),
     appBarTheme: _appBarTheme,
   );

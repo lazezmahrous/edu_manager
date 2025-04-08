@@ -48,6 +48,11 @@ dependencies:
   connectivity_plus: ^6.1.1
   flutter_bloc: ^9.1.0
   flutter_secure_storage: ^9.2.2
+  geolocator: 13.0.2
+  geolocator_android: 4.6.1
+  geocoding: ^3.0.0
+  country_code_picker: ^3.3.0
+  supabase_flutter: ^2.8.4
 
 dev_dependencies:
   flutter_test:

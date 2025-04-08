@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class ColorsManager {
-  static const Color mainBlue = Color(0xFF247CFF);
+  static  Color mainBlue = HexColor('#0059F7');
   static const Color mainWhite = Color(0xffFCFDFD);
   static Color secondGray = HexColor('#5A5A5A');
   static Color maingray = HexColor('#B5B5B5');

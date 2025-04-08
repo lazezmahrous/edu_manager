@@ -1,4 +1,45 @@
 {
-    "noConnection":"No Connection"
+    "noConnection":"No Connection",
+    "changeLanguage": "Change Language",
+    "termsAndConditionsTextOne": "By registering, you agree to our",
+    "termsAndConditionsTextTow": "Terms and Conditions",
+    "termsAndConditionsTextThree": "and",
+    "termsAndConditionsTextFour": "Privacy Policy",
+    "address": "Address",
+    "getLocationError": "There was a problem detecting your address automatically, you can enter it manually",
+"userisLogin": "Already have an account?",
+"fieldIsRequired":"Field Is Required",
+    "erordata": "You can't leave this empty",
+    "setting": "Settings",
+    "language": "Language",
+    "arLanguage": "Arabic",
+    "enLanguage": "English",
+    "theme": "Theme",
+    "darkTheme": "Dark",
+    "lightTheme": "Light",
+    "welcomePageButton": "Login",
+    "loginHeadText": "Sign In",
+    "loginEmail": "Email",
+    "loginEmailError": "Enter a valid email",
+    "loginEmailIsUsedWithAnotherUser": "Email is already in use",
+    "userNotFound": "User not registered before",
+    "passwoard": "Password",
+    "phoneNumber": "Phone Number",
+    "phoneNumberIsEmpty": "Enter your phone number",
+    "validPhoneNumber": "Enter a valid phone number",
+  
+    "wrongPassword": "Wrong password",
+    "weakPassword": "Weak password",
+    "emailAlreadyInUse": "Email already in use",
+    "confirmPsswoard": "Confirm Password",
+    "passwoardNotMatch": "Passwords do not match",
+    "loginPasswoardError": "Incorrect password",
+    "userNotLogin": "Not registered yet?",
+    "sighnUpHeadText": "Create Account",
+    "loadingSighnUser": "Creating account...",
+    "sighnUpUserName": "Username",
+    "wrongUserName": "Name is too short"
+
 
 }
+  
