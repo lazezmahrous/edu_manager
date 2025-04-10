@@ -8,6 +8,5 @@
 class AppImages {
   AppImages._();
   
-	//Check -> 
-	//types: [.png, .jpg, .jpeg, .webp, .webm, .bmp, .svg, .gif, .riv, .json]
+  static const String location = 'assets/images/location.png';  
 }

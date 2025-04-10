@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:geolocator/geolocator.dart';
 
 import '../../networking/services/maps_services.dart';
 
@@ -16,15 +17,15 @@ class GetAddressCubit extends Cubit<GetAddressState> {
   void emitGetAdressStates() async {
     emit(const GetAddressState.loading());
     try {
-      final location = await _mapsService.getCurrentLocation();
-      // print('Location: $location');/
-
-      emit(const GetAddressState.success());
+      Position? location = await _mapsService.getCurrentLocation();
+      debugPrint("${location!.latitude}");
+      debugPrint("${location.longitude}");
+      emit(GetAddressState.success(
+        location: location,
+      ));
     } catch (e) {
-      print('Error: $e');
-
-      debugPrint("exception ========= ${e}");
-      emit(const GetAddressState.failure());
+      debugPrint("exception ========= $e");
+      emit(GetAddressState.failure(errMessage: e.toString()));
     }
   }
 }
