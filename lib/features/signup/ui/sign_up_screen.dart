@@ -1,3 +1,5 @@
+import 'package:edu_manager/core/global%20widgets/app_back_button.dart';
+import 'package:edu_manager/core/helpers/extensions.dart';
 import 'package:edu_manager/core/helpers/spacing.dart';
 import 'package:edu_manager/core/theming/font_weight_helper.dart';
 import 'package:edu_manager/features/select_user_type/data/models/acdemy.dart';
@@ -27,7 +29,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: context.appBarWithArrowBack(),
       body: Form(
         key: context.read<SignUpCubit>().formKey,
         child: ListView(
@@ -41,10 +43,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
             ),
             verticalSpace(20),
+
             // this widget showing form, for different user types
             buildForm(widget.userType)!,
             verticalSpace(10),
             const SignUpFromWidget(),
+            
             verticalSpace(20),
             const SignUpButton(),
           ],

@@ -1,4 +1,5 @@
 import 'package:edu_manager/core/routing/routers.dart';
+import 'package:edu_manager/features/get_current_location/ui/screens/get_current_location_screen.dart';
 import 'package:edu_manager/features/select_user_type/data/models/acdemy.dart';
 import 'package:edu_manager/features/select_user_type/data/models/student.dart';
 import 'package:edu_manager/features/select_user_type/ui/select_user_type_screen.dart';
@@ -39,13 +40,16 @@ class AppRouter {
             ),
           ),
         );
-      // case Routes.loginScreen:
-      //   return MaterialPageRoute(
-      //     builder: (_) => BlocProvider(
-      //       create: (context) => getIt<LoginCubit>(),
-      //       child: const LoginScreen(),
-      //     ),
-      //   );
+
+
+
+      case Routes.getCurrentLocation:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<GetAddressCubit>(),
+            child: const GetCurrentLocationScreen(),
+          ),
+        );
       case Routes.selectUserTypeScreen:
         return MaterialPageRoute(
           builder: (_) => const SelectUserTypeScreen(),

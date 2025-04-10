@@ -53,6 +53,7 @@ dependencies:
   geocoding: ^3.0.0
   country_code_picker: ^3.3.0
   supabase_flutter: ^2.8.4
+  webview_flutter: ^4.10.0
 
 dev_dependencies:
   flutter_test:

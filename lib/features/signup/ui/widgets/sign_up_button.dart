@@ -43,15 +43,17 @@ class _SignUpButtonState extends State<SignUpButton> {
             ? const AppLoading()
             : AppGradientButton(
                 onPressed: () {
-                  if (context.read<SignUpCubit>().latitude == null &&
-                      context.read<SignUpCubit>().longitude == null) {
-                    context.pushNamed('routeName');
-                  } else if (context
+                  if (context
                       .read<SignUpCubit>()
                       .formKey
                       .currentState!
                       .validate()) {
-                    context.read<SignUpCubit>().emitSignupStates();
+                    if (context.read<SignUpCubit>().latitude == null &&
+                        context.read<SignUpCubit>().longitude == null) {
+                      context.pushNamed(Routes.getCurrentLocation);
+                    } else {
+                      context.read<SignUpCubit>().emitSignupStates();
+                    }
                   }
                 },
                 size: Size(double.infinity, 40.h),
