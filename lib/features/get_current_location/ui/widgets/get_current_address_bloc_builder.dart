@@ -7,8 +7,10 @@ import 'package:edu_manager/features/signup/data/logic/cubit/get_address_cubit.d
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import '../../../../core/global widgets/app_buttons.dart';
+import '../../../../core/helpers/show_snack_bar.dart';
 
 class GetCurrentAddressBlocBuilder extends StatelessWidget {
   const GetCurrentAddressBlocBuilder({super.key});
@@ -21,11 +23,9 @@ class GetCurrentAddressBlocBuilder extends StatelessWidget {
         listener: (context, state) {
           state.whenOrNull(
             success: (location) async {
-              await Future.delayed(const Duration(
-                seconds: 5,
-              ));
-
-              context.pushNamed(Routes.confirmationEmailScreen ,arguments:'lazezma7rous@gmail.com' );
+              showToast(isError: false, message: 'تم التحقق من العنوان');
+              context.pushNamed(Routes.confirmationEmailScreen,
+                  arguments: 'lazezma7rous@gmail.com');
             },
           );
         },
