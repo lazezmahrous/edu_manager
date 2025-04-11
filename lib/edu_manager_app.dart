@@ -9,6 +9,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'core/routing/app_router.dart';
 import 'core/routing/routers.dart';
+import 'core/services/deep_links.dart';
 import 'core/theming/app_theming_manager.dart';
 import 'features/connectivity/ui/widgets/connectivity_widget.dart';
 
@@ -23,6 +24,16 @@ class EduManagerApp extends StatefulWidget {
 }
 
 class _EduManagerAppState extends State<EduManagerApp> {
+
+    @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      DeepLinksManager.handleDeepLink();
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
