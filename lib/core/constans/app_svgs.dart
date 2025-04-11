@@ -8,6 +8,7 @@
 class AppSvgs {
   AppSvgs._();
   
+  static const String accessLocatin = 'assets/svgs/access_locatin.svg';  
   static const String angleDoubleSmallRight = 'assets/svgs/angle-double-small-right.svg';  
   static const String angleLeft = 'assets/svgs/angle-left.svg';  
   static const String angleRight = 'assets/svgs/angle-right.svg';  

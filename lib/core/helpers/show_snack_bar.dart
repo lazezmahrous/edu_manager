@@ -29,7 +29,7 @@ void showToast({required String message, required bool isError}) {
   Fluttertoast.showToast(
     msg: message,
     toastLength: Toast.LENGTH_SHORT,
-    gravity: ToastGravity.TOP,
+    gravity: ToastGravity.BOTTOM,
     timeInSecForIosWeb: 1,
     backgroundColor: isError ? ColorsManager.pink : ColorsManager.green,
     textColor: Colors.white,
@@ -37,7 +37,7 @@ void showToast({required String message, required bool isError}) {
   );
 }
 
-void showSnackBarBlue(BuildContext context, String message ) {
+void showSnackBarBlue(BuildContext context, String message) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
       content: Text(
@@ -50,7 +50,8 @@ void showSnackBarBlue(BuildContext context, String message ) {
     ),
   );
 }
-void showSnackBarWithChild(BuildContext context , Widget child) {
+
+void showSnackBarWithChild(BuildContext context, Widget child) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
       content: child,
