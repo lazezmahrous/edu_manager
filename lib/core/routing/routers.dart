@@ -5,4 +5,5 @@ class Routes {
   static const String loginScreen = '/loginScreen';
   static const String selectUserTypeScreen = '/selectUserTypeScreen';
   static const String getCurrentLocation = '/getCurrentLocation';
+  static const String confirmationEmailScreen = '/confirmationEmailScreen';
 }

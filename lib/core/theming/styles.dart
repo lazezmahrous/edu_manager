@@ -134,4 +134,10 @@ class TextStyles {
     fontWeight: FontWeightHelper.bold,
     color: ColorsManager.darkBlue,
   );
+
+  static TextStyle font12WhiteForButtons = TextStyle(
+    color: ColorsManager.mainWhite,
+    fontWeight: FontWeightHelper.semiBold,
+    fontSize: 12.sp,
+  );
 }

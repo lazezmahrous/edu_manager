@@ -1,14 +1,12 @@
 import 'package:supabase_flutter/supabase_flutter.dart';
+
+import '../constans/app_secure_data.dart';
+
 class SupabaseDatabase {
   Future<void> initSupabase() async {
     await Supabase.initialize(
-      url: 'https://xyzcompany.supabase.co',
-      anonKey: 'public-anon-key',
-    );
-
-    await Supabase.initialize(
-      url: 'SUPABASE_URL',
-      anonKey: 'SUPABASE_ANON_KEY',
+      url: AppSecurreData.supabaseUrl,
+      anonKey: AppSecurreData.supabaseAnonKey,
       authOptions: const FlutterAuthClientOptions(
         authFlowType: AuthFlowType.pkce,
       ),
@@ -18,6 +16,15 @@ class SupabaseDatabase {
       storageOptions: const StorageClientOptions(
         retryAttempts: 10,
       ),
+    );
+  }
+
+  // SignIn With Magic Link
+  Future<void> signInWithMagicLink({required String email}) async {
+    final ref = Supabase.instance;
+    await ref.client.auth.signInWithOtp(
+      emailRedirectTo: 'edumanager://signin_with_magic_link',
+      email: email,
     );
   }
 }

@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:edu_manager/core/helpers/extensions.dart';
 
-import '../../../../core/global widgets/app_button.dart';
+import '../../../../core/global widgets/app_buttons.dart';
 import '../../../../core/global widgets/app_loading.dart';
 import '../../../../core/routing/routers.dart';
 import '../../../../generated/l10n.dart';

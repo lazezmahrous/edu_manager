@@ -6,6 +6,7 @@ part 'student_request_model.g.dart';
 class StudentRequestModel {
   final String id;
   final String name;
+  final String email;
   final String password;
   final String phoneNumber;
   final String educationStage;
@@ -15,6 +16,7 @@ class StudentRequestModel {
   StudentRequestModel({
     required this.id,
     required this.name,
+    required this.email,
     required this.password,
     required this.phoneNumber,
     required this.educationStage,
