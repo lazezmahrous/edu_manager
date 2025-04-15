@@ -12,13 +12,11 @@ class ConfirmationEmailCubit extends Cubit<ConfirmationEmailState> {
   ConfirmationEmailCubit(this._confirmationEmailRepo)
       : super(const ConfirmationEmailState.initial());
 
-  final TextEditingController emialController = TextEditingController();
-
-  void emitSendMagicLinkStates() async {
+  void emitSendMagicLinkStates(String email) async {
     emit(const ConfirmationEmailState.loading());
 
     final response = await _confirmationEmailRepo
-        .sendConfirmationEmail('lazezma7rous@gmail.com');
+        .sendConfirmationEmail(email);
 
     response.when(
       success: (data) => emit(const ConfirmationEmailState.success()),

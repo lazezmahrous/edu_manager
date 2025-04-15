@@ -28,6 +28,7 @@ class SignUpCubit extends Cubit<SignUpState> {
   final formKey = GlobalKey<FormState>();
 
   void emitSignupStates() async {
+    print(emailController.text);
     emit(const SignUpState.loading());
 
     //   try {

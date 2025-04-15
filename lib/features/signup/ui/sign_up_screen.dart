@@ -5,7 +5,7 @@ import 'package:edu_manager/core/theming/font_weight_helper.dart';
 import 'package:edu_manager/features/select_user_type/data/models/acdemy.dart';
 import 'package:edu_manager/features/select_user_type/data/models/student.dart';
 import 'package:edu_manager/features/select_user_type/data/models/teacher.dart';
-import 'package:edu_manager/features/select_user_type/data/models/user_type.dart';
+import 'package:edu_manager/features/select_user_type/data/models/user_strategy.dart';
 import 'package:edu_manager/features/signup/data/networking/services/maps_services.dart';
 import 'package:edu_manager/features/signup/ui/widgets/acadmy_signup_form.dart';
 import 'package:edu_manager/features/signup/ui/widgets/sign_up_from.dart';
@@ -20,7 +20,7 @@ import 'widgets/student_signup_form.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key, required this.userType});
-  final UserType userType;
+  final UserStrategy userType;
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
 }
@@ -48,7 +48,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             buildForm(widget.userType)!,
             verticalSpace(10),
             const SignUpFromWidget(),
-            
+
             verticalSpace(20),
             const SignUpButton(),
           ],
@@ -57,7 +57,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
-  Widget? buildForm(UserType type) {
+  Widget? buildForm(UserStrategy type) {
     if (type is Student) return const StudentSignupForm();
     if (type is Teacher) return const TeacherSignupForm();
     if (type is Academy) return const AcadmySignupForm();

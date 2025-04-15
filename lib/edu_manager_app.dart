@@ -24,15 +24,13 @@ class EduManagerApp extends StatefulWidget {
 }
 
 class _EduManagerAppState extends State<EduManagerApp> {
-
-    @override
+  @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       DeepLinksManager.handleDeepLink();
     });
   }
-
 
   @override
   Widget build(BuildContext context) {

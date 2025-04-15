@@ -2,7 +2,7 @@ import 'package:edu_manager/core/global%20widgets/app_back_button.dart';
 import 'package:edu_manager/core/helpers/extensions.dart';
 import 'package:edu_manager/core/routing/routers.dart';
 import 'package:edu_manager/core/theming/colors.dart';
-import 'package:edu_manager/features/select_user_type/data/models/user_type.dart';
+import 'package:edu_manager/features/select_user_type/data/models/user_strategy.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -10,7 +10,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 class UserTypeWidget extends StatelessWidget {
   final String type;
   final String icon;
-  final UserType userType;
+  final UserStrategy userType;
   const UserTypeWidget({
     super.key,
     required this.icon,
@@ -22,8 +22,8 @@ class UserTypeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        UserType user = userType;
-        user.getUserType();
+        UserStrategy user = userType;
+
         context.pushNamed(Routes.signupScreen, arguments: user);
       },
       child: Container(

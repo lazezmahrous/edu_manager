@@ -1,11 +1,11 @@
-import 'package:edu_manager/features/select_user_type/data/models/user_type.dart';
+import 'package:edu_manager/features/select_user_type/data/models/user_strategy.dart';
 
-class Academy implements UserType {
+import 'user_type_enums.dart';
+
+class Academy implements UserStrategy {
   @override
-  UserType getUserType() {
-    return Academy();
-  }
-  
+  UserType get typeLabel => UserType.academy;
+
   @override
   Future<void> signUp() {
     // TODO: implement signUp

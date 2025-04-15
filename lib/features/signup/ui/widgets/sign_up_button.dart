@@ -48,12 +48,10 @@ class _SignUpButtonState extends State<SignUpButton> {
                       .formKey
                       .currentState!
                       .validate()) {
-                    if (context.read<SignUpCubit>().latitude == null &&
-                        context.read<SignUpCubit>().longitude == null) {
-                      context.pushNamed(Routes.getCurrentLocation);
-                    } else {
-                      context.read<SignUpCubit>().emitSignupStates();
-                    }
+                    context.pushNamed(
+                      Routes.getCurrentLocation,
+                      arguments: context.read<SignUpCubit>(),
+                    );
                   }
                 },
                 size: Size(double.infinity, 40.h),

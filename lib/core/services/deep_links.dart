@@ -1,4 +1,8 @@
 import 'package:app_links/app_links.dart';
+import 'package:edu_manager/features/confirmation_email/ui/screens/validation_user_data_and_do_signup.dart';
+import 'package:flutter/material.dart';
+
+import '../../edu_manager_app.dart';
 
 class DeepLinksManager {
   DeepLinksManager._();
@@ -7,16 +11,16 @@ class DeepLinksManager {
     appLinks.uriLinkStream.listen((uri) {
       if (uri.host == 'signin_with_magic_link') {
         print('success signin =======success=======w');
-        // pushToResetPasswordScreen();
+        pushToValidationUserDataAndDoSignup();
       }
     });
   }
 
-  // static void pushToResetPasswordScreen() {
-  //   EduManagerApp.navigatorKey.currentState?.push(
-  //     MaterialPageRoute(
-  //       builder: (BuildContext context) => const ResetPasswordScreen(),
-  //     ),
-  //   );
-  // }
+  static void pushToValidationUserDataAndDoSignup() {
+    EduManagerApp.navigatorKey.currentState?.push(
+      MaterialPageRoute(
+        builder: (BuildContext context) => const ValidationUserDataAndDoSignup(),
+      ),
+    );
+  }
 }
