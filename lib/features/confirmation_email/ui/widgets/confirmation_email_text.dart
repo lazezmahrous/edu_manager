@@ -1,10 +1,7 @@
-import 'package:edu_manager/core/global%20widgets/app_buttons.dart';
 import 'package:edu_manager/core/helpers/spacing.dart';
-import 'package:edu_manager/core/theming/colors.dart';
 import 'package:edu_manager/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ConfirmationEmailText extends StatefulWidget {
@@ -23,7 +20,7 @@ class _ConfirmationEmailTextState extends State<ConfirmationEmailText> {
         Text(
           textAlign: TextAlign.center,
           'تم إرسال رابط التحقق إلى بريدك الإلكتروني',
-          style: TextStyles.font34BlackBold,
+          style: TextStyles.font30Regular,
         ),
         verticalSpace(20),
         Text(

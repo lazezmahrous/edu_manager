@@ -66,9 +66,9 @@ class _SendConfirmationEmailAgainButtonState
       onPressed: isCooldown
           ? () {}
           : () async {
-              context.read<ConfirmationEmailCubit>().emialController.text =
-                  widget.email;
-              context.read<ConfirmationEmailCubit>().emitSendMagicLinkStates();
+              context.read<ConfirmationEmailCubit>().emitSendMagicLinkStates(
+                widget.email,
+              );
               startCooldown();
             },
     );

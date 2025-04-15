@@ -1,5 +1,4 @@
-
-import 'package:edu_manager/features/select_user_type/data/models/user_type.dart';
+import 'package:edu_manager/features/select_user_type/data/models/user_strategy.dart';
 
 import '../../../../../core/helpers/shared_pref_constans.dart';
 import '../../../../../core/helpers/shared_pref_helper.dart';
@@ -8,7 +7,7 @@ class SignupRepo {
   // final SupabaseAuthService _authService;
   // SignupRepo(this._authService);
 
-  Future<String> signup(UserType user) async {
+  Future<String> signup(UserStrategy user) async {
     try {
       // Sighnup User
       // AuthResponse response = await _authService.signupWithEmailAndPassword(

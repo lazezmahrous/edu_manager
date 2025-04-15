@@ -20,7 +20,7 @@ mixin _$GetAddressState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(Position location) success,
+    required TResult Function(Position location, String address) success,
     required TResult Function(String errMessage) failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$GetAddressState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(Position location)? success,
+    TResult? Function(Position location, String address)? success,
     TResult? Function(String errMessage)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$GetAddressState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(Position location)? success,
+    TResult Function(Position location, String address)? success,
     TResult Function(String errMessage)? failure,
     required TResult orElse(),
   }) =>
@@ -132,7 +132,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(Position location) success,
+    required TResult Function(Position location, String address) success,
     required TResult Function(String errMessage) failure,
   }) {
     return initial();
@@ -143,7 +143,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(Position location)? success,
+    TResult? Function(Position location, String address)? success,
     TResult? Function(String errMessage)? failure,
   }) {
     return initial?.call();
@@ -154,7 +154,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(Position location)? success,
+    TResult Function(Position location, String address)? success,
     TResult Function(String errMessage)? failure,
     required TResult orElse(),
   }) {
@@ -249,7 +249,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(Position location) success,
+    required TResult Function(Position location, String address) success,
     required TResult Function(String errMessage) failure,
   }) {
     return loading();
@@ -260,7 +260,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(Position location)? success,
+    TResult? Function(Position location, String address)? success,
     TResult? Function(String errMessage)? failure,
   }) {
     return loading?.call();
@@ -271,7 +271,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(Position location)? success,
+    TResult Function(Position location, String address)? success,
     TResult Function(String errMessage)? failure,
     required TResult orElse(),
   }) {
@@ -329,7 +329,7 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({Position location});
+  $Res call({Position location, String address});
 }
 
 /// @nodoc
@@ -346,12 +346,17 @@ class __$$SuccessImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? location = null,
+    Object? address = null,
   }) {
     return _then(_$SuccessImpl(
       location: null == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as Position,
+      address: null == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -359,14 +364,16 @@ class __$$SuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SuccessImpl implements _Success {
-  const _$SuccessImpl({required this.location});
+  const _$SuccessImpl({required this.location, required this.address});
 
   @override
   final Position location;
+  @override
+  final String address;
 
   @override
   String toString() {
-    return 'GetAddressState.success(location: $location)';
+    return 'GetAddressState.success(location: $location, address: $address)';
   }
 
   @override
@@ -375,11 +382,12 @@ class _$SuccessImpl implements _Success {
         (other.runtimeType == runtimeType &&
             other is _$SuccessImpl &&
             (identical(other.location, location) ||
-                other.location == location));
+                other.location == location) &&
+            (identical(other.address, address) || other.address == address));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, location);
+  int get hashCode => Object.hash(runtimeType, location, address);
 
   /// Create a copy of GetAddressState
   /// with the given fields replaced by the non-null parameter values.
@@ -394,10 +402,10 @@ class _$SuccessImpl implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(Position location) success,
+    required TResult Function(Position location, String address) success,
     required TResult Function(String errMessage) failure,
   }) {
-    return success(location);
+    return success(location, address);
   }
 
   @override
@@ -405,10 +413,10 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(Position location)? success,
+    TResult? Function(Position location, String address)? success,
     TResult? Function(String errMessage)? failure,
   }) {
-    return success?.call(location);
+    return success?.call(location, address);
   }
 
   @override
@@ -416,12 +424,12 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(Position location)? success,
+    TResult Function(Position location, String address)? success,
     TResult Function(String errMessage)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(location);
+      return success(location, address);
     }
     return orElse();
   }
@@ -465,9 +473,12 @@ class _$SuccessImpl implements _Success {
 }
 
 abstract class _Success implements GetAddressState {
-  const factory _Success({required final Position location}) = _$SuccessImpl;
+  const factory _Success(
+      {required final Position location,
+      required final String address}) = _$SuccessImpl;
 
   Position get location;
+  String get address;
 
   /// Create a copy of GetAddressState
   /// with the given fields replaced by the non-null parameter values.
@@ -547,7 +558,7 @@ class _$FailureImpl implements _Failure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(Position location) success,
+    required TResult Function(Position location, String address) success,
     required TResult Function(String errMessage) failure,
   }) {
     return failure(errMessage);
@@ -558,7 +569,7 @@ class _$FailureImpl implements _Failure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(Position location)? success,
+    TResult? Function(Position location, String address)? success,
     TResult? Function(String errMessage)? failure,
   }) {
     return failure?.call(errMessage);
@@ -569,7 +580,7 @@ class _$FailureImpl implements _Failure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(Position location)? success,
+    TResult Function(Position location, String address)? success,
     TResult Function(String errMessage)? failure,
     required TResult orElse(),
   }) {

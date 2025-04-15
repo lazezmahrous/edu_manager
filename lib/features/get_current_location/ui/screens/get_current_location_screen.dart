@@ -1,15 +1,12 @@
 import 'package:edu_manager/core/constans/app_svgs.dart';
 import 'package:edu_manager/core/helpers/extensions.dart';
-import 'package:edu_manager/features/get_current_location/ui/screens/map_webview_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../core/constans/app_images.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/styles.dart';
 import '../widgets/get_current_address_bloc_builder.dart';
-import '../widgets/request_get_current_location_widget.dart';
 
 class GetCurrentLocationScreen extends StatefulWidget {
   const GetCurrentLocationScreen({super.key});

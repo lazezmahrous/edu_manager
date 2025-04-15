@@ -1,20 +1,17 @@
 import 'package:edu_manager/core/routing/routers.dart';
 import 'package:edu_manager/features/confirmation_email/logic/confirmation_email_cubit.dart';
 import 'package:edu_manager/features/confirmation_email/ui/screens/confirmation_email_screen.dart';
+import 'package:edu_manager/features/confirmation_email/ui/screens/validation_user_data_and_do_signup.dart';
 import 'package:edu_manager/features/get_current_location/ui/screens/get_current_location_screen.dart';
-import 'package:edu_manager/features/select_user_type/data/models/acdemy.dart';
-import 'package:edu_manager/features/select_user_type/data/models/student.dart';
 import 'package:edu_manager/features/select_user_type/ui/select_user_type_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../features/select_user_type/data/models/user_type.dart';
+import '../../features/select_user_type/data/models/user_strategy.dart';
 import '../../features/signup/data/logic/cubit/get_address_cubit.dart';
 import '../../features/signup/data/logic/cubit/sign_up_cubit.dart';
 import '../../features/signup/ui/sign_up_screen.dart';
 import '../di/dependency_injection.dart';
-import '../models/requests_models/student_request_model.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
@@ -26,7 +23,7 @@ class AppRouter {
       //     builder: (_) => const OnBoarding(),
       //   );
       case Routes.signupScreen:
-        final userType = settings.arguments as UserType;
+        final userType = settings.arguments as UserStrategy;
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
             providers: [
@@ -45,9 +42,18 @@ class AppRouter {
         );
 
       case Routes.getCurrentLocation:
+        final signUpCubit = settings.arguments as SignUpCubit;
+
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => getIt<GetAddressCubit>(),
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider.value(
+                value: signUpCubit,
+              ),
+              BlocProvider(
+                create: (context) => getIt<GetAddressCubit>(),
+              ),
+            ],
             child: const GetCurrentLocationScreen(),
           ),
         );
@@ -55,15 +61,28 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const SelectUserTypeScreen(),
         );
-      // case Routes.bottomNavBar:
-      //   return MaterialPageRoute(builder: (context) => BottomNavBar(),);
       case Routes.confirmationEmailScreen:
+        final signUpCubit = settings.arguments as SignUpCubit;
+
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-              create: (context) => getIt<ConfirmationEmailCubit>(),
-              child: const ConfirmationEmailScreen(
-                email: 'userData',
-              )),
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider.value(
+                value: signUpCubit,
+              ),
+              BlocProvider(
+                create: (context) => getIt<ConfirmationEmailCubit>(),
+              )
+            ],
+            child: const ConfirmationEmailScreen(),
+          ),
+        );
+      case Routes.validationUserDataAndDoSignup:
+        final signUpCubit = settings.arguments as SignUpCubit;
+
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+              value: signUpCubit, child: const ValidationUserDataAndDoSignup()),
         );
 
       default:

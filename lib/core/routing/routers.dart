@@ -6,4 +6,5 @@ class Routes {
   static const String selectUserTypeScreen = '/selectUserTypeScreen';
   static const String getCurrentLocation = '/getCurrentLocation';
   static const String confirmationEmailScreen = '/confirmationEmailScreen';
+  static const String validationUserDataAndDoSignup = '/validationUserDataAndDoSignup';
 }

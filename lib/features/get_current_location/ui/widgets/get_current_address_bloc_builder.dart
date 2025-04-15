@@ -4,10 +4,11 @@ import 'package:edu_manager/core/global%20widgets/app_loading.dart';
 import 'package:edu_manager/core/helpers/extensions.dart';
 import 'package:edu_manager/core/routing/routers.dart';
 import 'package:edu_manager/features/signup/data/logic/cubit/get_address_cubit.dart';
+import 'package:edu_manager/features/signup/data/logic/cubit/sign_up_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:geolocator_android/geolocator_android.dart';
 
 import '../../../../core/global widgets/app_buttons.dart';
 import '../../../../core/helpers/show_snack_bar.dart';
@@ -22,10 +23,9 @@ class GetCurrentAddressBlocBuilder extends StatelessWidget {
       child: BlocConsumer<GetAddressCubit, GetAddressState>(
         listener: (context, state) {
           state.whenOrNull(
-            success: (location) async {
-              showToast(isError: false, message: 'تم التحقق من العنوان');
-              context.pushNamed(Routes.confirmationEmailScreen,
-                  arguments: 'lazezma7rous@gmail.com');
+            success: (location, address) async {
+              // Passing location data to cubit
+              vaildCurrentLocation(context, address, location);
             },
           );
         },
@@ -45,5 +45,16 @@ class GetCurrentAddressBlocBuilder extends StatelessWidget {
         },
       ),
     );
+  }
+
+  void vaildCurrentLocation(
+      BuildContext context, String address, Position location) {
+    context.read<SignUpCubit>().latitude = location.latitude;
+    context.read<SignUpCubit>().longitude = location.longitude;
+    context.read<SignUpCubit>().addressController.text = address;
+
+    showToast(isError: false, message: 'تم التحقق من العنوان');
+    context.pushNamed(Routes.confirmationEmailScreen,
+        arguments: 'lazezma7rous@gmail.com');
   }
 }
